@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            background-image: linear-gradient(rgba(0, 70, 150, 0.45), rgba(34, 83, 139, 0.45)) ,url(d6dceae5-2ce4-4d0e-aa44-5b9f08497eda.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        nav{
+            height: 60px;
+            width: 100%;
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            display: flex;
+            background-color: rgb(16, 16, 70);
+            color: white;
+            
+        }
+
+        nav header{
+            font-size: 30px;
+            padding: 10px;
+            
+        }
+
+        nav ul {
+            margin-left: 23%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav a {
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        #myloc {
+            height: 40px;
+            width: 120px;
+            font-size: 15px;
+            margin-left: auto;
+            margin-right: 30px;
+            margin-top: 10px;
+            border-radius: 30px;
+            background-color: rgb(17, 17, 53);
+            color: white;
+        }
+
+        .format{
+            margin-top: 75px;
+            height: calc(100vh - 75px);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            box-sizing: border-box;
+            gap: 15px;
+        }
+
+        .layer1{
+            height: 220px;
+            width: 1000px;
+            background-color: ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;   
+        }
+
+        .layer2{
+            height: 170px;
+            width: 1000px;
+            background-color: rgb(36, 36, 87);
+            border-radius: 15px;
+            
+        }
+
+        .layer3{
+            height: 110px;
+            width: 1000px;
+            background-color: ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .hello{
+            height: 214px;
+            width: 450px;
+            background-color: ;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .temp{
+            height: 214px;
+            width: 500px;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .tempinfo {
+            height: 210px;
+            width: 270px;
+            background-color: ;
+            color: white;
+        }
+
+        .tempinfo2{
+            height: 210px;
+            width: 190px;
+            background-color: ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #weathericon{
+            font-size: 85px;
+            
+        }
+
+        .layer2 header {
+            padding: 5px;
+            padding-left: 15px;
+            color: white;
+            font-weight: 500;
+            
+        }
+
+        .foredays{
+            height: 134px;
+            width: 995px;
+            background-color: ;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items:center;
+            gap: 25px;
+        }
+
+        .day{
+            height: 126px;
+            width: 170px;
+            background-color: rgb(69, 45, 133);
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px; 
+        }
+
+        .day h4,h3,h2,p{
+            margin: 0;
+        }
+
+        .day p{
+            font-size: 24px;
+        }
+
+        .l3box1{
+            height: 108px;
+            width: 600px;
+            background-color: rgb(36, 36, 87);
+            border-radius: 15px;
+        }
+
+        .l3box2{
+            height: 108px;
+            width: 350px;
+            background-color: rgb(36, 36, 87);
+            border-radius: 15px;
+        }
+
+        .l3box1 header{
+            padding: 5px;
+            padding-left: 15px;
+            color: white;
+            font-weight: 500;
+        }
+
+        .highlights{
+            height: 83px;
+            width: 595px;
+            background-color: ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .box{
+            height: 61px;
+            width: 100px;
+            background-color: rgb(69, 45, 133);
+            border-radius: 10px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .box h4,p{
+            margin: 0;
+        }
+
+        .l3box2 header{
+            padding: 5px;
+            padding-left: 15px;
+            color: white;
+            font-weight: 500;
+        }
+
+        .hello header{
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .hello p{
+            font-size: 17px;
+            color: white;
+        }
+
+        #input{
+            height: 40px;
+            border-radius: 10px;
+            width: 230px;
+            font-size: 18px;
+            box-shadow: 0 0 2px 2px white;
+        }
+
+        #search{
+            height: 30px;
+            width: 65px;
+            background-color: blueviolet;
+            color: white;
+            font-size: 15px;
+            
+        }
+
+        .hello table tr{
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            flex-direction: row;
+        }
+
+        #recentcities{
+            height: 70px;
+            width: 250px;
+            background-color:;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-left: 53px;
+        }
+
+        .recentitem{
+            height: 28px;
+            width: 84px;
+            font-size: 17px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .recentitem:hover{
+            background-color: black;
+            color: white;
+            box-shadow: 0 0 2px 2px white;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <header>⛅ Weather</header>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Forecast</a></li>
+            <li><a href="">About</a></li>
+        </ul>
+        <button id="myloc">📍My location</button>
+    </nav>
+
+    <div class="format">
+        <div class="layer1">
+            <div class="hello">
+                <header>Hey Hii!👋🏻</header>
+                <p>Get the latest weather updates <br> for your favourite places.</p>
+                <table>
+                    <tr>
+                        <td><input type="text" placeholder="🔍 Enter a city name..." id="input"></td>
+                        <td><button onclick="search()" id="search">Search</button></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="temp">
+                <div class="tempinfo">
+                    <h2 id="city">Chennai</h2>
+                    <h1 id="celsius">32°C</h1>
+                    <p id="situation">Clear sky</p>
+                    <p id="feels">Feels like 35°C</p>
+                </div>
+
+                <div class="tempinfo2">
+                    <p id="weathericon">☀️</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="layer2">
+            <header>5-Day Forecast</header>
+            <div class="foredays">
+                <div class="day">
+                    <h3>Monday</h3>
+                    <p>☀️</p>
+                    <h2>32°C</h2>
+                    <h4>Clear</h4>
+                </div>
+                <div class="day">
+                    <h3>Monday</h3>
+                    <p>☀️</p>
+                    <h2>32°C</h2>
+                    <h4>Clear</h4>
+                </div>
+                <div class="day">
+                    <h3>Monday</h3>
+                    <p>☀️</p>
+                    <h2>32°C</h2>
+                    <h4>Clear</h4>
+                </div>
+                <div class="day">
+                    <h3>Monday</h3>
+                    <p>☀️</p>
+                    <h2>32°C</h2>
+                    <h4>Clear</h4>
+                </div>
+                <div class="day">
+                    <h3>Monday</h3>
+                    <p>☀️</p>
+                    <h2>32°C</h2>
+                    <h4>Clear</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="layer3">
+            <div class="l3box1">
+               <header>Today's Highlights</header>
+               <div class="highlights">
+                    <div class="box">
+
+                    </div>
+                    <div class="box">
+                    
+                    </div>
+                    <div class="box">
+                    
+                    </div>
+                    <div class="box">
+                    
+                    </div>
+                    <div class="box">
+                    
+                    </div>
+               </div>
+            </div>
+            <div class="l3box2" id="recentsearch">
+                <header>Recent Searches</header>
+
+                <div id="recentcities">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    
+        async function search(){
+            let city=document.getElementById("input").value
+
+            if (city.trim() === ""){
+                return;
+            }
+
+            let result =await getweather(city)
+
+            getforecast(city);
+
+            if (result===false) {
+                return
+            }
+
+            let searches=JSON.parse(localStorage.getItem("searches")) || []
+
+            if(!searches.includes(city)) {
+                searches.push(city)
+            }
+
+            if(searches.length>4) {
+                searches.shift()
+            }
+
+            localStorage.setItem("searches",JSON.stringify(searches))
+
+            let recent = document.getElementById("recentcities")
+
+            recent.textContent=""
+
+            searches.forEach((city) => {
+                let item = document.createElement("div")
+                item.classList.add("recentitem")
+                item.textContent=city
+                item.addEventListener("click",() => {
+                    getweather(city)
+                    getforecast(city)
+                })
+
+                recent.append(item)   
+            })
+        }
+
+        let apikey = "YOUR_API_KEY";
+
+        let highlights=document.getElementsByClassName("box")
+
+        async function getweather(city) {
+
+            let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+
+            document.getElementById("celsius").textContent="loading..."
+
+            let response=await fetch(url)
+
+            if(response.ok === false) {
+                document.getElementById("city").textContent=" CITY - NOT - FOUND ";
+                document.getElementById("celsius").textContent=" ! ! ! ! ! ! !  ";
+                document.getElementById("situation").textContent="";
+                document.getElementById("feels").textContent="";
+                document.getElementById("weathericon").textContent="";
+
+                for(let i=0;i<highlights.length;i++) {
+                    highlights[i].innerHTML=`<p> </p> <h4> </h4>`
+                }
+                return false;
+            }
+
+            let data = await response.json()
+
+            document.getElementById("city").textContent= data.name;
+            document.getElementById("celsius").textContent= data.main.temp + "°C";
+            document.getElementById("situation").textContent=data.weather[0].description;
+            document.getElementById("feels").textContent= "feels like " +data.main.feels_like + "°C";
+
+
+
+            let feels_like=data.main.feels_like
+            let humidity=data.main.humidity
+            let windspeed=data.wind.speed*3.6
+            let sunrise=data.sys.sunrise*1000
+            let crtsunrise=new Date(sunrise)
+            let sunset=data.sys.sunset*1000
+            let crtsunset=new Date(sunset)
+
+            highlights[0].innerHTML=`<p>Feels like</p> <h4> ${feels_like.toFixed(1)}°C </h4>`
+            highlights[1].innerHTML=`<p>Humidity</p> <h4> ${humidity}% </h4>`
+            highlights[2].innerHTML=`<p>Wind Speed</p> <h4> ${windspeed.toFixed(1)} km/h </h4>`
+            highlights[3].innerHTML=`<p>Sunrise</p> <h4> ${crtsunrise.toLocaleTimeString("en-US" ,{
+                hour:"numeric",
+                minute:"2-digit",
+                hour12:true
+            })} </h4>`
+            highlights[4].innerHTML=`<p>Sunset</p> <h4> ${crtsunset.toLocaleTimeString("en-US",{
+                hour:"numeric",
+                minute:"2-digit",
+                hour12:true
+            })} </h4>`
+
+            let situation= data.weather[0].description
+
+            if (situation == "clear sky"){
+                document.getElementById("weathericon").textContent="☀️"
+            }
+            else if (situation == "few clouds"){
+                document.getElementById("weathericon").textContent="⛅"
+            }
+            else if (situation == "scattered clouds"){
+                document.getElementById("weathericon").textContent="☁️"
+            }
+            else if (situation == "overcast clouds"){
+                document.getElementById("weathericon").textContent="🌦️"
+            }
+            else if (situation == "light rain"){
+                document.getElementById("weathericon").textContent="🌧️"
+            }
+            else if (situation == "heavy rain"){
+                document.getElementById("weathericon").textContent="☔"
+            }
+            else if (situation == "thunderstorm"){
+                document.getElementById("weathericon").textContent="⛈️"
+            }
+            else if (situation == "snow"){
+                document.getElementById("weathericon").textContent="❄️"
+            }
+            else if (situation == "mist"){
+                document.getElementById("weathericon").textContent="🌬️"
+            }
+            else{
+                document.getElementById("weathericon").textContent="☁️"
+            }
+
+            return true;
+        }
+
+        let foredays=document.getElementsByClassName("day")
+    
+        async function getforecast(city){
+
+            let url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apikey}&units=metric`;
+
+            let response = await fetch(url)
+
+            
+
+            if (response.ok === false) {
+                for(let i=0;i<foredays.length;i++){
+                    foredays[i].innerHTML=`<h3>-</h3> <p>-</p> <h2>-</h2> <h4>-</h4>`
+                }
+                return;
+            }
+
+            let data = await response.json()
+
+            let forecasts = [];
+
+            data.list.forEach((forecast) => {
+                if (forecast.dt_txt.includes("12:00:00")) {
+                    forecasts.push(forecast)
+                }
+            })
+
+            forecasts.forEach((forecast,index) => {
+
+                let situation=forecast.weather[0].description
+                let icon = ""
+                if (situation == "clear sky"){
+                    icon= "☀️"
+                }
+                else if (situation == "few clouds"){
+                    icon="⛅"
+                }
+                else if (situation == "scattered clouds"){
+                    icon="☁️"
+                }
+                else if (situation == "overcast clouds"){
+                    icon="🌦️"
+                }
+                else if (situation == "light rain"){
+                    icon="🌧️"
+                }
+                else if (situation == "heavy rain"){
+                    icon="☔"
+                }
+                else if (situation == "thunderstorm"){
+                    icon="⛈️"
+                }
+                else if (situation == "snow"){
+                    icon="❄️"
+                }
+                else if (situation == "mist"){
+                    icon="🌬️"
+                }
+                else{
+                    icon="☁️"
+                }
+
+                let date=forecast.dt_txt
+                date=date.split(" ")[0]
+
+                let dateday = new Date(date)
+                
+                let daynumber= dateday.getDay()
+
+                let weekdays=[ "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+                let displaydays= weekdays[daynumber]
+
+                foredays[index].innerHTML=`<h3>${displaydays}</h3> <p>${icon}</p> <h2>${forecast.main.temp}</h2> <h4>${forecast.weather[0].description}</h4>  `
+            })
+
+        }
+
+        let mylocation=document.getElementById("myloc")
+        mylocation.addEventListener("click",() => {
+
+            navigator.geolocation.getCurrentPosition((position) => {
+                
+                let latitude=position.coords.latitude
+                let longitude=position.coords.longitude
+
+                getweatheroflocation(latitude,longitude)
+                getforecastoflocation(latitude,longitude)
+
+            })
+        })
+
+        async function getweatheroflocation(latitude,longitude) {
+
+            let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apikey}&units=metric`
+
+            document.getElementById("celsius").textContent="Loading..."
+
+            let response= await fetch(url)
+
+            if (!response.ok) {
+                return;
+            }
+
+            let data=await response.json()
+
+            let feels_like=data.main.feels_like
+            let humidity=data.main.humidity
+            let windspeed=data.wind.speed*3.6
+            let sunrise=data.sys.sunrise*1000
+            let crtsunrise=new Date(sunrise)
+            let sunset=data.sys.sunset*1000
+            let crtsunset=new Date(sunset)
+
+            highlights[0].innerHTML=`<p>Feels like</p> <h4> ${feels_like.toFixed(1)}°C </h4>`
+            highlights[1].innerHTML=`<p>Humidity</p> <h4> ${humidity}% </h4>`
+            highlights[2].innerHTML=`<p>Wind Speed</p> <h4> ${windspeed.toFixed(1)} km/h </h4>`
+            highlights[3].innerHTML=`<p>Sunrise</p> <h4> ${crtsunrise.toLocaleTimeString("en-US" ,{
+                hour:"numeric",
+                minute:"2-digit",
+                hour12:true
+            })} </h4>`
+            highlights[4].innerHTML=`<p>Sunset</p> <h4> ${crtsunset.toLocaleTimeString("en-US",{
+                hour:"numeric",
+                minute:"2-digit",
+                hour12:true
+            })} </h4>`
+
+            document.getElementById("city").textContent= data.name;
+            document.getElementById("celsius").textContent= data.main.temp + "°C";
+            document.getElementById("situation").textContent=data.weather[0].description;
+            document.getElementById("feels").textContent= "feels like " +data.main.feels_like + "°C";
+
+        }
+
+        async function getforecastoflocation(latitude,longitude) {
+            let url=`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apikey}&units=metric`
+
+            let response=await fetch(url)
+
+            if (!response.ok) {
+                return;
+            }
+
+            let data=await response.json()
+
+            let forecasts=[]
+
+            data.list.forEach((forecast) => {
+                if (forecast.dt_txt.includes("12:00:00")) {
+                    forecasts.push(forecast)
+                }
+            })
+
+            forecasts.forEach((forecast,index) => {
+
+                let situation=forecast.weather[0].description
+                let icon = ""
+                if (situation == "clear sky"){
+                    icon= "☀️"
+                }
+                else if (situation == "few clouds"){
+                    icon="⛅"
+                }
+                else if (situation == "scattered clouds"){
+                    icon="☁️"
+                }
+                else if (situation == "overcast clouds"){
+                    icon="🌦️"
+                }
+                else if (situation == "light rain"){
+                    icon="🌧️"
+                }
+                else if (situation == "heavy rain"){
+                    icon="☔"
+                }
+                else if (situation == "thunderstorm"){
+                    icon="⛈️"
+                }
+                else if (situation == "snow"){
+                    icon="❄️"
+                }
+                else if (situation == "mist"){
+                    icon="🌬️"
+                }
+                else{
+                    icon="☁️"
+                }
+
+                let date=forecast.dt_txt
+                date=date.split(" ")[0]
+
+                let dateday=new Date(date)
+
+                let daynumber=dateday.getDay()
+
+                let weekdays=[ "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+                let displaydays=weekdays[daynumber]
+
+                foredays[index].innerHTML=` <h3>${displaydays}</h3> <p>${icon}</p> <h2>${forecast.main.temp}</h2> <h4>${forecast.weather[0].description}</h4> `
+            })
+
+        }
+
+        
+            
+        
+    </script>
+</body>
+</html>
